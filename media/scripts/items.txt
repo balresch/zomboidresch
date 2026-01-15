@@ -1,0 +1,75 @@
+module ZomboidResch
+{
+    item NintendoSwitch
+    {
+        DisplayName = Nintendo Switch,
+        DisplayCategory = Entertainment,
+        Type = Drainable,
+        UseDelta = 0.005,
+        UseWhileEquipped = false,
+        Weight = 0.3,
+        Icon = NintendoSwitch,
+        WorldStaticModel = ElectronicDevice,
+        Tooltip = Tooltip_NintendoSwitch,
+    }
+
+    item Cartridge_Fishing
+    {
+        DisplayName = Bass Master Pro,
+        DisplayCategory = Entertainment,
+        Type = Normal,
+        Weight = 0.01,
+        Icon = Cartridge,
+        Tooltip = Tooltip_Cartridge_Fishing,
+    }
+
+    item Cartridge_Cooking
+    {
+        DisplayName = Cooking Mama,
+        DisplayCategory = Entertainment,
+        Type = Normal,
+        Weight = 0.01,
+        Icon = Cartridge,
+        Tooltip = Tooltip_Cartridge_Cooking,
+    }
+
+    item Cartridge_Mechanics
+    {
+        DisplayName = Car Mechanic Sim,
+        DisplayCategory = Entertainment,
+        Type = Normal,
+        Weight = 0.01,
+        Icon = Cartridge,
+        Tooltip = Tooltip_Cartridge_Mechanics,
+    }
+
+    item Cartridge_Electrical
+    {
+        DisplayName = Circuit Builder,
+        DisplayCategory = Entertainment,
+        Type = Normal,
+        Weight = 0.01,
+        Icon = Cartridge,
+        Tooltip = Tooltip_Cartridge_Electrical,
+    }
+
+    item Cartridge_Carpentry
+    {
+        DisplayName = Bob's Workshop,
+        DisplayCategory = Entertainment,
+        Type = Normal,
+        Weight = 0.01,
+        Icon = Cartridge,
+        Tooltip = Tooltip_Cartridge_Carpentry,
+    }
+
+    item Cartridge_Aiming
+    {
+        DisplayName = Duck Hunt,
+        DisplayCategory = Entertainment,
+        Type = Normal,
+        Weight = 0.01,
+        Icon = Cartridge,
+        Tooltip = Tooltip_Cartridge_Aiming,
+    }
+}

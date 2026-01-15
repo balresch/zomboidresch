@@ -1,0 +1,9 @@
+UI_EN = {
+    Tooltip_NintendoSwitch = "A portable gaming console. Still has some battery left.",
+    Tooltip_Cartridge_Fishing = "A fishing simulation game. Practice your angling skills!",
+    Tooltip_Cartridge_Cooking = "A cooking game. Learn recipes and kitchen techniques!",
+    Tooltip_Cartridge_Mechanics = "A car repair simulator. Learn how engines work!",
+    Tooltip_Cartridge_Electrical = "An electronics puzzle game. Master circuits and wiring!",
+    Tooltip_Cartridge_Carpentry = "A building and crafting game. Learn woodworking!",
+    Tooltip_Cartridge_Aiming = "A classic shooting game. Improve your aim!",
+}
