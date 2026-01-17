@@ -4,20 +4,20 @@ module ZomboidResch
     {
         DisplayName = Nintendo Switch,
         DisplayCategory = Entertainment,
-        Type = Drainable,
+        ItemType = base:drainable,
         UseDelta = 0.005,
         UseWhileEquipped = false,
         Weight = 0.3,
         Icon = NintendoSwitch,
-        WorldStaticModel = ElectronicDevice,
         Tooltip = Tooltip_NintendoSwitch,
+        cantBeConsolided = true,
     }
 
     item Cartridge_Fishing
     {
         DisplayName = Bass Master Pro,
         DisplayCategory = Entertainment,
-        Type = Normal,
+        ItemType = base:normal,
         Weight = 0.01,
         Icon = Cartridge,
         Tooltip = Tooltip_Cartridge_Fishing,
@@ -27,7 +27,7 @@ module ZomboidResch
     {
         DisplayName = Cooking Mama,
         DisplayCategory = Entertainment,
-        Type = Normal,
+        ItemType = base:normal,
         Weight = 0.01,
         Icon = Cartridge,
         Tooltip = Tooltip_Cartridge_Cooking,
@@ -37,7 +37,7 @@ module ZomboidResch
     {
         DisplayName = Car Mechanic Sim,
         DisplayCategory = Entertainment,
-        Type = Normal,
+        ItemType = base:normal,
         Weight = 0.01,
         Icon = Cartridge,
         Tooltip = Tooltip_Cartridge_Mechanics,
@@ -47,7 +47,7 @@ module ZomboidResch
     {
         DisplayName = Circuit Builder,
         DisplayCategory = Entertainment,
-        Type = Normal,
+        ItemType = base:normal,
         Weight = 0.01,
         Icon = Cartridge,
         Tooltip = Tooltip_Cartridge_Electrical,
@@ -57,7 +57,7 @@ module ZomboidResch
     {
         DisplayName = Bob's Workshop,
         DisplayCategory = Entertainment,
-        Type = Normal,
+        ItemType = base:normal,
         Weight = 0.01,
         Icon = Cartridge,
         Tooltip = Tooltip_Cartridge_Carpentry,
@@ -67,7 +67,7 @@ module ZomboidResch
     {
         DisplayName = Duck Hunt,
         DisplayCategory = Entertainment,
-        Type = Normal,
+        ItemType = base:normal,
         Weight = 0.01,
         Icon = Cartridge,
         Tooltip = Tooltip_Cartridge_Aiming,

@@ -17,7 +17,7 @@ function ZomboidResch.Client.onPlayNintendoSwitch(player, item)
 end
 
 function ZomboidResch.Client.onInsertBattery(player, switchItem, battery)
-    local currentCharge = switchItem:getUsedDelta()
+    local currentCharge = switchItem:getCurrentUsesFloat()
     local newCharge = math.min(1.0, currentCharge + ZomboidResch.Client.BATTERY_CHARGE)
     switchItem:setUsedDelta(newCharge)
     player:getInventory():Remove(battery)
@@ -29,7 +29,7 @@ function ZomboidResch.Client.onInsertCartridge(player, switchItem, cartridge)
     -- If there's already a cartridge, return it to inventory first
     local currentCartridge = ZomboidResch.getInsertedCartridge(switchItem)
     if currentCartridge then
-        local oldCartridge = InventoryItemFactory.CreateItem(currentCartridge)
+        local oldCartridge = instanceItem(currentCartridge)
         if oldCartridge then
             player:getInventory():AddItem(oldCartridge)
         end
@@ -45,7 +45,7 @@ end
 function ZomboidResch.Client.onRemoveCartridge(player, switchItem)
     local currentCartridge = ZomboidResch.getInsertedCartridge(switchItem)
     if currentCartridge then
-        local cartridge = InventoryItemFactory.CreateItem(currentCartridge)
+        local cartridge = instanceItem(currentCartridge)
         if cartridge then
             player:getInventory():AddItem(cartridge)
         end
@@ -54,7 +54,7 @@ function ZomboidResch.Client.onRemoveCartridge(player, switchItem)
 end
 
 function ZomboidResch.Client.getBatteryTooltip(item)
-    local charge = item:getUsedDelta()
+    local charge = item:getCurrentUsesFloat()
     local percent = math.floor(charge * 100)
     return "Battery: " .. percent .. "%"
 end
@@ -95,7 +95,7 @@ function ZomboidResch.Client.onFillInventoryContextMenu(playerNum, context, item
         end
 
         if item:getFullType() == "ZomboidResch.NintendoSwitch" then
-            local charge = item:getUsedDelta()
+            local charge = item:getCurrentUsesFloat()
             local hasBattery = charge > 0
 
             -- Play option (disabled if no battery)
@@ -150,7 +150,8 @@ function ZomboidResch.Client.onFillInventoryContextMenu(playerNum, context, item
             local battery = inventory:getFirstTypeRecurse("Base.Battery")
             if battery then
                 local batteryOption = context:addOption("Insert Battery", player, ZomboidResch.Client.onInsertBattery, item, battery)
-                if charge >= 1.0 then
+                local currentCharge = item:getCurrentUsesFloat()
+                if currentCharge >= 1.0 then
                     batteryOption.notAvailable = true
                     local tipFull = ISWorldObjectContextMenu.addToolTip()
                     tipFull:setName("Insert Battery")
